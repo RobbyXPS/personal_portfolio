@@ -101,10 +101,11 @@
 
   .nav-item {
     transform: translate3d(-600px, 0, 0);
+    //transform: translate3d(600px, 0, 0);
     @include easeOut;
 
     &.show {
-      // slide in from right
+      // slide in from left
       transform: translate3d(0, 0, 0);
     }
 

@@ -1,5 +1,18 @@
 // Widescreens
 @include mediaXl {
+  .menu {
+    .nav-item {
+      transform: translate3d(0px, 600px, 0);
+      //transform: translate3d(600px, 0, 0);
+      @include easeOut;
+    }
+    // delay the nav items animating in
+    @for $x from 1 through 3 {
+      .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.2s;
+      }
+    }
+  }
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -7,6 +20,20 @@
 
 // Desktops & Laptops
 @include mediaLg {
+  .menu {
+    .nav-item {
+      transform: translate3d(0px, 600px, 0);
+      @include easeOut;
+    }
+
+    // delay the nav items animating in
+    @for $x from 1 through 3 {
+      .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.2s;
+      }
+    }
+  }
+
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
